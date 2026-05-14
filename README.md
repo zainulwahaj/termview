@@ -8,6 +8,9 @@ tv animation.gif
 tv movie.mp4
 ```
 
+> **No terminal?** Try the [web version →](https://github.com/zainulwahaj/termview-web)
+> Drop an image / GIF / video, get the same ASCII / block / pixel output, download as PNG / GIF / TXT / ANS.
+
 ## Install
 
 ```bash
