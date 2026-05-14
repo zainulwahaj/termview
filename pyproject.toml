@@ -1,0 +1,57 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "termview"
+version = "0.1.0"
+description = "View images, animated GIFs, and videos in the terminal — with audio and keyboard controls"
+readme = "README.md"
+requires-python = ">=3.10"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [
+    { name = "Zain ul Wahaj" },
+]
+keywords = ["terminal", "image", "video", "viewer", "ansi", "sixel", "kitty", "iterm2"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Environment :: Console",
+    "Intended Audience :: End Users/Desktop",
+    "Intended Audience :: Developers",
+    "Operating System :: MacOS",
+    "Operating System :: POSIX :: Linux",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Multimedia :: Graphics :: Viewers",
+    "Topic :: Multimedia :: Video :: Display",
+    "Topic :: Terminals",
+]
+dependencies = [
+    "pillow>=10.0",
+    "numpy>=1.24",
+]
+
+[project.optional-dependencies]
+video = ["opencv-python-headless>=4.8"]
+
+[project.urls]
+Homepage = "https://github.com/zainulwahaj/termview"
+Repository = "https://github.com/zainulwahaj/termview"
+Issues = "https://github.com/zainulwahaj/termview/issues"
+
+[project.scripts]
+tv = "termview.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["termview"]
+
+[tool.hatch.build.targets.sdist]
+include = [
+    "termview",
+    "README.md",
+    "LICENSE",
+    "pyproject.toml",
+]
